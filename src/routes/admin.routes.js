@@ -49,7 +49,7 @@ router.put('/users/:id/role', isAuthenticated, isAdmin, updateUserRoleValidation
 router.delete('/users/:id', isAuthenticated, isAdmin, deleteUser);
 
 // Product management routes (admin only)
-router.get('/products', isAuthenticated, isAdmin, getAllProducts);
+router.get('/products', isAuthenticated, getAllProducts);
 router.post('/products', isAuthenticated, isAdmin, upload.single('image'), createProductValidation, handleValidationErrors, createProduct);
 router.put('/products/:id', isAuthenticated, isAdmin, upload.single('image'), updateProductValidation, handleValidationErrors, updateProduct);
 router.delete('/products/:id', isAuthenticated, isAdmin, deleteProduct);
